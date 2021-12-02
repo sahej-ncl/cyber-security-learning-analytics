@@ -1,28 +1,75 @@
 # Example preprocessing script.
-install.packages("ggplot2")
+#install.packages("dplyr")
+#install.packages("ggplot2")
 library(ggplot2)
+library(dplyr)
+
+load.project()
+#video_stat3 <- read.csv(file= 'C:/Users/Sahej/Documents/sahej eda/EDA/data/cyber-security-3_video-stats.csv')
+#video_stat4 <- read.csv(file= 'C:/Users/Sahej/Documents/sahej eda/EDA/data/cyber-security-4_video-stats.csv')
+#video_stat5 <- read.csv(file= 'C:/Users/Sahej/Documents/sahej eda/EDA/data/cyber-security-5_video-stats.csv')
+
+
 
 #Adding month column in data for September 2017 month
-cyber.security.3_video.stats$Month<-"September,2017"
+#cyber.security.3_video.stats$Month<-"September,2017"
 
 #Adding month column in data for November 2017 month
-cyber.security.4_video.stats$Month<-"November,2017"
+#cyber.security.4_video.stats$Month<-"November,2017"
 
 #Adding month column in data for Febuary 2018 month
-cyber.security.5_video.stats$Month<-"Febuary,2018"
-
-#Converting numeric into bar plot for better understanding
-#barplot(as.numeric(cyber.security.3_video.stats[,1])~cyber.security.3_video.stats[,3])
-
-# Simple Bar Plot
-#counts <- table(mtcars$gear)
-#barplot(counts, main="Car Distribution",
-      #  xlab="Number of Gears")
+#cyber.security.5_video.stats$Month<-"Febuary,2018"
 
 
 #Merging data from september 2017 and november 2017
-Merge1=merge(cyber.security.3_video.stats, cyber.security.4_video.stats, by='title', all = TRUE)
+#Merge1=merge(cyber.security.4_video.stats, cyber.security.5_video.stats, by='step_position', all = TRUE)
+
+#combining video stats data 4 and 5
+videostats4and5 <- rbind(cyber.security.4_video.stats, cyber.security.5_video.stats)
+#("Combined by rows: ", "\n")
+videostats4and5
+
+#combining leaving data response 4 and 5
+#Final_data <- rbind(cyber-security-4_leaving-survey-responses, cyber-security-5_leaving-survey-responses)
+#cat("Combined by rows: ", "\n")
+#Final_data 
 
 
+#Leaving Data
+#Using the answer from here [Importing several files and indexing them ]
+csv_files  = list.files(path="data",pattern = '*_leaving-survey-responses.csv', full.names = TRUE)
+csv_files
 
+#read files into a list
+Merge <- lapply(csv_files, read.csv, header = TRUE)
+Merge
+
+#Using rbind to combine files
+Final_data <- do.call(rbind , Merge)
+Final_data
+
+#Deleting records where the Leaving reason is "Prefer not say".
+Final_data<-Final_data[!(Final_data$leaving_reason=="I prefer not to say"),]
+Final_data
+
+#Removing_NA_records
+Final_data <- na.omit(Final_data) 
+
+
+#Making data in readable format
+Final_data["leaving_reason"][Final_data["leaving_reason"] == "The course wasnâ???T???t what I expected"] <- "The course wasn't what I expected"
+Final_data["leaving_reason"][Final_data["leaving_reason"] == "I donâ???T???t have enough time"] <- "I don't have enough time"
+Final_data["leaving_reason"][Final_data["leaving_reason"] == "The course wonâ???T???t help me reach my goals"] <- "The course won't help me reach my goals"
+
+Final_data
+
+
+#Converting table to data frame and calculating percentage of Leaving_reason variable
+Data_reason <- Final_data %>% 
+  group_by(leaving_reason) %>% # Variable to be transformed
+  count() %>% 
+  ungroup() %>% 
+  mutate(perc = `n` / sum(`n`)) %>% 
+  arrange(perc) %>%
+  mutate(labels = scales::percent(perc))
 
