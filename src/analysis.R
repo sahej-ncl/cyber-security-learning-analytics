@@ -2,10 +2,10 @@
 #install.packages("dplyr")
 library(ggplot2)
 library(ProjectTemplate)
-setwd("~/sahej eda/EDA")
+#setwd("~/sahej eda/EDA")
 load.project()
 #--------------------------------------------------------------------------------------------------------------------------------------------------
-#Relation between Step_position(title) vs total view
+#Relation between Step_position vs total view
 
 # video stats 3
 #Finding the relation between step position and total view using the correlation function for video stat3
@@ -13,7 +13,7 @@ cortop9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4]
 cortop9 
 #plotting the graph for step_position vs total_views
 plot9 = ggplot(cyber.security.3_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
-  ggtitle("Analysis of total users based on total downloads of the modules v3")
+  ggtitle("Analysis of step position vs total views of the modules v3")
 plot9
 
 # video stats 4 
@@ -22,7 +22,7 @@ cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4
 cortop10 
 #plotting the graph for step_position vs total_views
 plot10 = ggplot(cyber.security.4_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
-  ggtitle("Analysis of total users based on total downloads of the modules v4")
+  ggtitle("Analysis of step position vs total views of the modules v4")
 plot10
 
 # video stats 5
@@ -31,7 +31,7 @@ cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4
 cortop11 
 #plotting the graph for step_position vs total_views
 plot11 = ggplot(cyber.security.5_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
-  ggtitle("relation between total views vs title v5")
+  ggtitle("Analysis of step position vs total views of the modules v5")
 plot11
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ cortop9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4]
 cortop9 
 #plotting the graph for the title vs total view
 plot9 = ggplot(cyber.security.3_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
-  ggtitle("Analysis of total users based on total downloads of the modules v3")
+  ggtitle("Analysis of total views and duration of the video v3")
 plot9
 
 # video stats 4 
@@ -53,7 +53,7 @@ cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4
 cortop10 
 #plotting the graph for the title vs total view
 plot10 = ggplot(cyber.security.4_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
-  ggtitle("Analysis of total users based on total downloads of the modules v4")
+  ggtitle("total views and duration of the video v4")
 plot10
 
 # video stats 5
@@ -62,7 +62,7 @@ cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4
 cortop11 
 #plotting the graph for the title vs total view
 plot11 = ggplot(cyber.security.5_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
-  ggtitle("relation between total views vs title v5")
+  ggtitle("total views and duration of the video v5")
 plot11
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ cortop12 <- cor(videostats4and5[,4],videostats4and5[,15])
 cortop12 
 #.0        he graph for the viewed_onehundred_percent vs total view
  
-plot12 = ggplot(videostats4and5, aes(viewed_onehundred_percent,total_views, color = viewed_onehundred_percent, size = total_views)) + geom_point() +
+plot12 = ggplot(videostats4and5, aes(viewed_onehundred_percent,total_views, color = viewed_onehundred_percent, size = total_views)) + geom_point()
   ggtitle("relation between total views and viewed_onehundred_percent v3")
 plot12
 
@@ -88,7 +88,3 @@ Pie_graph = ggplot(Data_reason, aes(x = "", y = perc, fill = leaving_reason)) +
 #plotting the pie graph
 Pie_graph
 
-vgb#Comparing the 100%total view and The Most and Least common reason to leave the course
-#plotting a pie graph
-ggplot()
-.

@@ -4,35 +4,11 @@
 library(ggplot2)
 library(dplyr)
 
-load.project()
-#video_stat3 <- read.csv(file= 'C:/Users/Sahej/Documents/sahej eda/EDA/data/cyber-security-3_video-stats.csv')
-#video_stat4 <- read.csv(file= 'C:/Users/Sahej/Documents/sahej eda/EDA/data/cyber-security-4_video-stats.csv')
-#video_stat5 <- read.csv(file= 'C:/Users/Sahej/Documents/sahej eda/EDA/data/cyber-security-5_video-stats.csv')
-
-
-
-#Adding month column in data for September 2017 month
-#cyber.security.3_video.stats$Month<-"September,2017"
-
-#Adding month column in data for November 2017 month
-#cyber.security.4_video.stats$Month<-"November,2017"
-
-#Adding month column in data for Febuary 2018 month
-#cyber.security.5_video.stats$Month<-"Febuary,2018"
-
-
-#Merging data from september 2017 and november 2017
-#Merge1=merge(cyber.security.4_video.stats, cyber.security.5_video.stats, by='step_position', all = TRUE)
 
 #combining video stats data 4 and 5
 videostats4and5 <- rbind(cyber.security.4_video.stats, cyber.security.5_video.stats)
 #("Combined by rows: ", "\n")
 videostats4and5
-
-#combining leaving data response 4 and 5
-#Final_data <- rbind(cyber-security-4_leaving-survey-responses, cyber-security-5_leaving-survey-responses)
-#cat("Combined by rows: ", "\n")
-#Final_data 
 
 
 #Leaving Data
@@ -57,9 +33,9 @@ Final_data <- na.omit(Final_data)
 
 
 #Making data in readable format
-Final_data["leaving_reason"][Final_data["leaving_reason"] == "The course wasn�???T???t what I expected"] <- "The course wasn't what I expected"
-Final_data["leaving_reason"][Final_data["leaving_reason"] == "I don�???T???t have enough time"] <- "I don't have enough time"
-Final_data["leaving_reason"][Final_data["leaving_reason"] == "The course won�???T???t help me reach my goals"] <- "The course won't help me reach my goals"
+Final_data["leaving_reason"][Final_data["leaving_reason"] == "The course wasnâ€™t what I expected"] <- "The course wasn't what I expected"
+Final_data["leaving_reason"][Final_data["leaving_reason"] == "I donâ€™t have enough time"] <- "I don't have enough time"
+Final_data["leaving_reason"][Final_data["leaving_reason"] == "The course wonâ€™t help me reach my goals"] <- "The course won't help me reach my goals"
 
 Final_data
 
