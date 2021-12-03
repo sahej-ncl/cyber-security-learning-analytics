@@ -19,6 +19,20 @@ The demand to build a cyber resilient strategy becomes a necessity to avoid repu
 
 In this project work the analysis is done on the statistical viewing of viewing data set. This data set contains varies parameters such as Title, total views, duration of the videos, location of videos where they were watched. Using the above data along with the guidance of Cross-Industry Standard Process for Data Mining (CRISP-DM) Methodology, exploratory data analysis is performed. The results obtained graphically and with the calculations helps gives an insight on the data which can then be used to solve the business problems.
 
+Reproducibility
+
+1.	The meaning of reproducibility is the about running the same model n number of times but in return get the same output after every run which can be later modified to run investigation.
+
+2.	Project Template helps in the automating the process for us. Starting from preprocessing the data, organising the files in the folder, loading the R packages , loading all the data sets in the computers memory.
+
+3.	The benefits of this is that it results in faster loading of the files as it contains all the data in the cache folder, avoids problems between the code and the workspace code.
+
+4.	During the processing data the complete data set is in taken into accountability as one whole unit as a single data frame. If there is any more files to added needs to be done manully.
+
+5.	Project writing becomes easier as the reported is generated automatically in R markdown without any hassle.
+
+
+
 
 
 ## Analysis
@@ -74,7 +88,9 @@ Q1)  Cycle 1- How are the total views effected by the Step position.
 
 In this question we need to understand whether there is any relation between the views and the step position. This is the business understanding step in the CRISP-DM methodology.
 The first step before beginning with our analysis, the data needs to be cleaned and the columns must be structured.
+
 Now comparing the columns of total views effected by the Step position in video_stats_3 which is for the month of September 2017. In order to find the relation between the total views and step position, the correlation function is applied. The value calculated is -0.7168596. This states that they are inversely proportionate to each other. Later the graph is plotted via ggplot() function. As per the graph we can conclude that the viewers decreases as they proceed through the course.
+
 Comparing the columns in the video_stats4 as well as for video_stats5 by repeating the same procedure. The results observed by calculation for videos statistics 4 is -0.673233 and for video stats5 is -0.6636169 .  Using ggplot()for plotting the graph for video_stats 4 and video_stats 5, it can be inferred that the viewership starts to decrease as the course progresses towards the end.
 
 ```{r include=TRUE}
@@ -112,7 +128,9 @@ In this question we will be merging the data from the video_stats4 and video_sta
 From the calculated value the result obtained is 0.03268353. For plotting the graph the ggplot() function is used. 
 
 From the correlation of the total views and onehundred percent it can be stated that:
+
 a) Whenever the total views increases not only the total learners watching 100 percent of video increases but also the percentage learners increases and vice versa.
+
 b) This shows that if any video has good content people viewing it increases at a healthy rate which is stated through positive numerical correlation observed here.
 
 ```{r include=TRUE}
@@ -131,7 +149,10 @@ knitr::include_graphics(here::here("graphs", "plot_j4.png"))
 
 
 Cycle 2 What is the least and most common reason to leave the course?
-The data for this file is taken from the Leaving survey response. The data is transformed in data frame and the percentage of leaving reason variable is calculated. The data file for leaving response 4and5 are merged together. The data is then cleaned by omitting the blank columns. There are some text in the heading of the columns which needs to be changed to ensure that the readers can understand what is written. This ensure that there is no error while performing our analysis. The output is divided into seven categories. They are as follows
+
+The data for this file is taken from the Leaving survey response. The data is transformed in data frame and the percentage of leaving reason variable is calculated. The data file for leaving response 4and5 are merged together. The data is then cleaned by omitting the blank columns. 
+
+There are some text in the heading of the columns which needs to be changed to ensure that the readers can understand what is written. This ensure that there is no error while performing our analysis. The output is divided into seven categories. They are as follows
 
 a) I don’t have enough time
 b) Other
@@ -232,6 +253,12 @@ knitr::include_graphics(here::here("graphs", "plot_j11.png"))
 
 
 
+Conclusion
 
+1.After exploring moderate amount of the data it can inferred that sub titles of the subject does not play much role in the viewers leaving the course early on. The viewers interested sat through the complete course whereas the reason for the people leaving was expressed that they did not have enough time to study the course. 
+
+2.The other concern that the duration of videos made the viewers turn away from the course. This has some sort of connection that since they do not have much and the which makes them not watch the videos even if they download.
+
+3.The last data that was explored between the step position and HD video has little to no connection from the graph. Thereby, it can be inferred that the content of the video matters and the clarity of the video.
 
 
