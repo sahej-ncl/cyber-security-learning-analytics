@@ -1,0 +1,65 @@
+commit 973fff3b17103d60080003ac8b5a12ba8714df0e
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 15:25:07 2021 +0000
+
+    Readme file and reference
+
+commit 921af3ccb3161b798d88f11b7b11fd7e84abe495
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 15:12:42 2021 +0000
+
+    Complete
+
+commit 0aaea7a005558c1d57f6a8b2ad155202d54862f6
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 12:07:24 2021 +0000
+
+    Almost complete with the conclusion
+
+commit a7a7bbaa9bdc4d7ebe8a0dc964b1b4a1dd7488d1
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 09:19:32 2021 +0000
+
+    Almost done.
+
+commit adc1d8e06d1723534b75d282f14ccb1eede70966
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 08:29:45 2021 +0000
+
+    At the end only conclusion remaining.
+
+commit 908b5dc2102aacb7dfe116f99e4e1a055c883ab6
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 06:31:41 2021 +0000
+
+    Minor changes to the analysis code
+
+commit ea3aa8904bc2c1982079e65448994920c7af5544
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Fri Dec 3 04:00:33 2021 +0000
+
+    eda on 3 questions and start of rmarkdown report
+
+commit dd96661d69a7476d2ec6f7191779d07d5e0bca89
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Thu Dec 2 21:25:29 2021 +0000
+
+    "complete 3 question by CRISP-DM methodology"
+
+commit 8f70f1674fc8eac0dc1b0a37383ee170f0883528
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Wed Dec 1 00:10:22 2021 +0000
+
+    feat: configuring git ignore
+
+commit 3a7768f37b74cac07f789d8094e967693e837916
+Author: Sahej723 <s.sareen2@newcastle.ac.uk>
+Date:   Wed Dec 1 00:06:02 2021 +0000
+
+    feat: adding ggplot library to config
+
+commit 42891d5657da65c54324509fdc38cf9ddc270df3
+Author: Sahej723 <sahejsareen23@gmail.com>
+Date:   Tue Nov 30 23:49:30 2021 +0000
+
+    feat: initial commit of setup
