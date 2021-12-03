@@ -9,44 +9,45 @@ load.project()
 
 # video stats 3
 #Finding the relation between step position and total view using the correlation function for video stat3
-cortop9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4])
-cortop9 
+cortop1 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4])
+cortop1
 #plotting the graph for step_position vs total_views
-plot9 = ggplot(cyber.security.3_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
+plot1 = ggplot(cyber.security.3_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
   ggtitle("Analysis of step position vs total views of the modules v3")
-plot9
+plot1
 ggsave(file.path('graphs','plot_j1.png'), width = 10)
 
 # video stats 4 
 #Finding the relation between step position and total view using the correlation function for video stat4
-cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4])
-cortop10 
+cortop2 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4])
+cortop2 
 #plotting the graph for step_position vs total_views
-plot10 = ggplot(cyber.security.4_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
+plot2 = ggplot(cyber.security.4_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
   ggtitle("Analysis of step position vs total views of the modules v4")
-plot10
+plot2
 ggsave(file.path('graphs','plot_j2.png'), width = 10)
 
 # video stats 5
 #Finding the relation between step position and total view using the correlation function for video stat5
-cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4])
-cortop11 
+cortop3 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4])
+cortop3 
 #plotting the graph for step_position vs total_views
-plot11 = ggplot(cyber.security.5_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
+plot4 = ggplot(cyber.security.5_video.stats, aes(step_position,total_views, color = title, size = total_views)) + geom_point() +
   ggtitle("Analysis of step position vs total views of the modules v5")
-plot11
+plot4
 ggsave(file.path('graphs','plot_j3.png'), width = 10)
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 #Relation between total views and viewed_onehundred_percent
+
 # Video Stats for combined data of video stats 4 and 5
-cortop12 <- cor(videostats4and5[,4],videostats4and5[,15])
-cortop12 
-#.0        he graph for the viewed_onehundred_percent vs total view
+cortop5 <- cor(videostats4and5[,4],videostats4and5[,15])
+cortop5
+#the graph for the viewed_onehundred_percent vs total view
 #plotting using ggplot
-plot12 = ggplot(videostats4and5, aes(viewed_onehundred_percent,total_views, color = viewed_onehundred_percent, size = total_views)) + geom_point()
+plot5 = ggplot(videostats4and5, aes(viewed_onehundred_percent,total_views, color = viewed_onehundred_percent, size = total_views)) + geom_point()
   ggtitle("relation between total views and viewed_onehundred_percent v4and v5")
-plot12
+plot5
 ggsave(file.path('graphs','plot_j4.png'), width = 10)
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------
@@ -68,32 +69,69 @@ ggsave(file.path('graphs','plot_j5.png'), width = 10)
 
 # video stats 3
 #Finding the relation between total views and duration of the video for video stat3 using correlation function
-cortop9 <- cor(cyber.security.3_video.stats[,3],cyber.security.3_video.stats[,4])
-cortop9 
+cortop6 <- cor(cyber.security.3_video.stats[,3],cyber.security.3_video.stats[,4])
+cortop6
 #plotting the graph for the title vs total view
-plot9 = ggplot(cyber.security.3_video.stats, aes(video_duration,total_views, color = title, size = total_views)) + geom_point() +
+plot6 = ggplot(cyber.security.3_video.stats, aes(video_duration,total_views, color = title, size = total_views)) + geom_point() +
   ggtitle("Analysis of total views and duration of the video v3")
-plot9
+plot6
 ggsave(file.path('graphs','plot_j6.png'), width = 10)
 
 # video stats 4 
 #Finding the relation between total views and duration of the video for video stat4
-cortop10 <- cor(cyber.security.4_video.stats[,3],cyber.security.4_video.stats[,4])
-cortop10 
+cortop7 <- cor(cyber.security.4_video.stats[,3],cyber.security.4_video.stats[,4])
+cortop7 
 #plotting the graph for the title vs total view
-plot10 = ggplot(cyber.security.4_video.stats, aes(video_duration,total_views, color = title, size = total_views)) + geom_point() +
+plot7 = ggplot(cyber.security.4_video.stats, aes(video_duration,total_views, color = title, size = total_views)) + geom_point() +
   ggtitle("total views and duration of the video v4")
-plot10
+plot7
 ggsave(file.path('graphs','plot_j7.png'), width = 10)
 
 # video stats 5
 #Finding the relation between total views and duration of the video for video stat5
-cortop11 <- cor(cyber.security.5_video.stats[,3],cyber.security.5_video.stats[,4])
-cortop11 
+cortop8 <- cor(cyber.security.5_video.stats[,3],cyber.security.5_video.stats[,4])
+cortop8 
 #plotting the graph for the title vs total view
-plot11 = ggplot(cyber.security.5_video.stats, aes(video_duration,total_views,total_views, color = title, size = total_views)) + geom_point() +
+plot8 = ggplot(cyber.security.5_video.stats, aes(video_duration,total_views,total_views, color = title, size = total_views)) + geom_point() +
   ggtitle("total views and duration of the video v5")
-plot11
+plot8
 ggsave(file.path('graphs','plot_j8.png'), width = 10)
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------
+
+#relation between step_position vs total viewed hd
+
+# video stats 3
+#Finding the relation between step_position vs total viewed hd  for video stat3
+corto9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,8])
+cortop9 
+
+#plotting the graph for step_position vs total viewed hd
+plot9 = ggplot(cyber.security.3_video.stats, aes(step_position,viewed_hd, color = step_position, size = viewed_hd)) + geom_point() +
+  ggtitle("step_position-vs-total_viewed_hd_v3")
+plot9
+ggsave(file.path('graphs','plot_j9.png'), width = 10)
+
+# video stats 4
+#Finding the relation between step_position vs total viewed hd  for video stat4
+cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,8])
+cortop10 
+
+#plotting the graph for step_position vs total viewed hd
+plot10 = ggplot(cyber.security.4_video.stats, aes(step_position,viewed_hd, color = step_position, size = viewed_hd)) + geom_point() +
+  ggtitle("Analysis of step_position vs total viewed hd v4")
+plot10
+ggsave(file.path('graphs','plot_j10.png'), width = 10)
+
+# video stats 5
+#Finding the relation between step_position vs total viewed hd  for video stat5
+cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,8])
+cortop11 
+
+#plotting the graph for step_position vs total viewed hd
+plot11 = ggplot(cyber.security.5_video.stats, aes(step_position,viewed_hd, color = step_position, size = viewed_hd)) + geom_point() +
+  ggtitle("Analysis of step_position vs total viewed hd v5")
+plot11
+ggsave(file.path('graphs','plot_j11.png'), width = 10)
 
 

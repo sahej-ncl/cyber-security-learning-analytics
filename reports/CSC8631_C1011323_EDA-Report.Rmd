@@ -13,7 +13,9 @@ knitr::opts_knit$set(root.dir= normalizePath('..'))
 
 
 ## Introduction
-The demand for cyber security professionals has increased significantly in the last decade. This is because there has been substantial increase in the use of technology such as advance cell phone technology, high speed internet accessibility etc., which has led to increase in the data that is being generated. Thereby, the need to protect this data from vulnerabilities, risks, failures and attacks from hackers is imperative. The demand to build a cyber resilient strategy becomes a necessity to avoid reputation damages and protection from privacy invasion. There are now numerous programmes which prepare students to cope with the complex future of cyber security. Most of the courses related to cyber security are online and can be recorded or downloaded for further reference. These online courses access a network of world class academics and improve the courses handling.  The Future Learn MOOC data set contains archetype-survey-responses, enrollments, leaving survey response, question response, statistical viewing of viewing, question response. The data recorded for the above observations are done in specific intervals.
+The demand for cyber security professionals has increased significantly in the last decade. This is because there has been substantial increase in the use of technology such as advance cell phone technology, high speed internet accessibility etc., which has led to increase in the data that is being generated. Thereby, the need to protect this data from vulnerabilities, risks, failures and attacks from hackers is imperative.
+
+The demand to build a cyber resilient strategy becomes a necessity to avoid reputation damages and protection from privacy invasion. There are now numerous programmes which prepare students to cope with the complex future of cyber security. Most of the courses related to cyber security are online and can be recorded or downloaded for further reference. These online courses access a network of world class academics and improve the courses handling.  The Future Learn MOOC data set contains archetype-survey-responses, enrollments, leaving survey response, question response, statistical viewing of viewing, question response. The data recorded for the above observations are done in specific intervals.
 
 In this project work the analysis is done on the statistical viewing of viewing data set. This data set contains varies parameters such as Title, total views, duration of the videos, location of videos where they were watched. Using the above data along with the guidance of Cross-Industry Standard Process for Data Mining (CRISP-DM) Methodology, exploratory data analysis is performed. The results obtained graphically and with the calculations helps gives an insight on the data which can then be used to solve the business problems.
 
@@ -24,19 +26,28 @@ In this project work the analysis is done on the statistical viewing of viewing 
 The above data analysis is done based on the CRISP-DM methodology. The following steps in this methodology are as follows   
 
 a)Business Understanding
+
 This is essential part of the project before proceeding ahead with the next step. This is because it is essential to understand what the business objective will be otherwise the half way through the project the goal will not be achieved and economical resources as well as time will be wasted.
+
 b)Data Understanding 
+
 •	In this step, there are 4 steps namely collect,Describe,explore, data quality. 
 •	The data collection is where we acquire the data.  Describe is where we check the data to see if there any errors in it, also check its structure.  Also to check if the data is satisfying our objective or not. 
 •	 In data  Exploring the data and submitting the initial findings of the data.   
 •	Data quality to check if there are any blank spaces in or not.
+
 c)Data preparation
+
 Now after acquiring the data and at this step it is the final step before doing modelling on it. In this we we clean the data and maybe construct new columns or rows in it to help in the modelling section. Also in this we integrate two or more datas.
+
 d)Modelling
+
 In this step after data preparation we apply various models on it and test various outcomes on it and later assess the models.
 e)Evaluation
 In this step we evaluate the results obtained. This is the summary of all the steps previously worked on
+
 f)development
+
 In this process decision is taken to be worked on or not. If agreed upon then it is executed otherwise it will go for another iteration.
 
 
@@ -68,25 +79,27 @@ Comparing the columns in the video_stats4 as well as for video_stats5 by repeati
 
 ```{r include=TRUE}
 
-cortop9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4])
-cortop9 
-cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4])
-cortop10
-cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4])
-cortop11 
+cortop1 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4])
+cortop1
+cortop2 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4])
+cortop2
+cortop3 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4])
+cortop3 
 ```
 
-```{r fig.align = 'center', out.width = "100%", fig.cap = "Analysis of step position vs total views of the modules v3", echo = FALSE}
+```{r fig.align = 'center', out.width = "110%", fig.cap = "Analysis of step position vs total views of the modules v3", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "plot_j1.png"))
 ```
 
-```{r fig.align = 'center', out.width = "100%", fig.cap = "Analysis of step position vs total views of the modules v4", echo = FALSE}
+```{r fig.align = 'center', out.width = "110%", fig.cap = "Analysis of step position vs total views of the modules v4", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "plot_j2.png"))
 ```
 
-```{r fig.align = 'center', out.width = "100%", fig.cap = "Analysis of step position vs total views of the modules v5", echo = FALSE}
+```{r fig.align = 'center', out.width = "110%", fig.cap = "Analysis of step position vs total views of the modules v5", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "plot_j3.png"))
 ```
+
+
 
 
 
@@ -102,7 +115,14 @@ From the correlation of the total views and onehundred percent it can be stated 
 a) Whenever the total views increases not only the total learners watching 100 percent of video increases but also the percentage learners increases and vice versa.
 b) This shows that if any video has good content people viewing it increases at a healthy rate which is stated through positive numerical correlation observed here.
 
-```{r fig.align = 'center', out.width = "100%", fig.cap = "relation between total views and viewed onehundred percent v4 and v5", echo = FALSE}
+```{r include=TRUE}
+videostats4and5 <- rbind(cyber.security.4_video.stats, cyber.security.5_video.stats)
+videostats4and5
+cortop4 <- cor(videostats4and5[,4],videostats4and5[,15])
+cortop4
+```
+
+```{r fig.align = 'center', out.width = "110%", fig.cap = "relation between total views and viewed onehundred percent v4 and v5", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "plot_j4.png"))
 ```
 
@@ -112,6 +132,7 @@ knitr::include_graphics(here::here("graphs", "plot_j4.png"))
 
 Cycle 2 What is the least and most common reason to leave the course?
 The data for this file is taken from the Leaving survey response. The data is transformed in data frame and the percentage of leaving reason variable is calculated. The data file for leaving response 4and5 are merged together. The data is then cleaned by omitting the blank columns. There are some text in the heading of the columns which needs to be changed to ensure that the readers can understand what is written. This ensure that there is no error while performing our analysis. The output is divided into seven categories. They are as follows
+
 a) I don’t have enough time
 b) Other
 c) The course required more time than I realized
@@ -121,18 +142,93 @@ f) The course wasn’t what I expected
 g) The course won’t help me reach my goal
 
 
-```{r plot 8, fig.align = 'center', out.width = "100%", fig.cap = "leaving reason", echo = FALSE}
+The following data is transfered from  
+
+1.From the follwoing data  "The course wasnâ€™t what I expected"] to "The course wasn't what I expected"
+
+2. From the follwoing data "I donâ€™t have enough time"] to "I don't have enough time"
+
+3. From the follwoing data  "The course wonâ€™t help me reach my goals"] to "The course won't help me reach my goals"
+
+
+
+
+```{r , fig.align = 'centre', out.width = "130%", fig.cap = "leaving reason", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "plot_j5.png"))
 ```
 It can be understood from the graph that the pie chart shows that the majority of students chose "Other" as their reason for leaving the course (i.e. 30.09 percent). Thereby no conclusions can be drawn from this. Thereby selecting the next highest column that is they ‘ I don’t have enough time’  i.e 17.70%. The least  percentage of the pie is the ‘the course was too easy’ i.e 7.96%.
 
 
-Q3) Does the duration of the video effect the total viewership?
-In this question we will be considering the column of the total views and duration of the video. In this case we will be considering the data for September 2017 November 2017 and februaury 2018. This will help us in performing the analysis and give us some insights of the relation. We will be using the correlation function to find out the relation between them. After performing the correlation function the calculated result  for video_stats3 is -0.0532359. 
+Q3) Does the duration of the video effect the total viewership? 
+
+In this question we will be considering the column of the total views and duration of the video. In this case we will be considering the data for September 2017 November 2017 and februaury 2018. This will help us in performing the analysis and give us some insights of the relation. We will be using the correlation function to find out the relation between them. After performing the correlation function the calculated result  for video_stats3 is -0.0532359.
+
 The same procedure is repeated on the video_stats4 is -0.09594468. and the result for video_stats5 is -0.07226244. It can be said that the relation is inversely proportional to each other. 
 After performing the correlation function a graph is plotted using the ggplot() function for the above mentioned data. As per the plot it can be seen that as video duration increase the total viewers dip in number.
+Figure7,8,9
 
 
+```{r include=TRUE}
+
+cortop6 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4])
+cortop6 
+cortop7 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4])
+cortop7
+cortop8 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4])
+cortop8 
+```
+
+
+```{r , fig.align = 'centre', out.width = "120%", fig.cap = "total views and duration of the video v3", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j6.png"))
+```
+
+
+```{r , fig.align = 'centre', out.width = "120%", fig.cap = "total views and duration of the video v4", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j7.png"))
+```
+
+```{r , fig.align = 'centre', out.width = "120%", fig.cap = "total views and duration of the video v5", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j8.png"))
+```
+
+
+
+Q4) Exploring other data such as step position and total viewed HD to find out any relation between them
+
+In this question we will be considering the step position and total viewed HD for our analysis. In this case we will be considering the data for the months of September 2017 November 2017 and February 2018. In this to find out the relation between the step position and total viewed hd we will be applying the cor() function.
+
+The answers obtained at the end of the calculation of correlation for video_stats3 is -0.0532359. The same process is applied to the video_stats4 and video_stats5. The obtained for them are -0.06281232 and -0.04673555.  This shows that the result is much closer to 0, this indicated that there is no correlation between them.
+
+Using ggplot() for plotting the graph for all the three data. We can infer that there is the HD quality videos have no effect on the student rather it indicates the makers that the data must have substantial content and not depend on the HD quality of video to interest the students.
+Figure10,11,12
+
+```{r include=TRUE}
+
+cortop9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,8])
+cortop9 
+
+cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,8])
+cortop10 
+
+cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,8])
+cortop11
+```
+
+
+
+```{r fig.align = 'center', out.width = "110%", fig.cap = "v3", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j9.png"))
+```
+
+
+```{r fig.align = 'center', out.width = "110%", fig.cap = "v4", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j10.png"))
+```
+
+```{r fig.align = 'center', out.width = "110%", fig.cap = "v5", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j11.png"))
+```
 
 
 
