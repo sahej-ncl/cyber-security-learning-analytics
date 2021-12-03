@@ -85,6 +85,10 @@ options(repos="https://cran.rstudio.com")
 
 
 Q1)  Cycle 1- How are the total views effected by the Step position.
+ 
+Reason for asking question-
+
+The reason for asking this question is that some people might only want to study only specific and maybe they study that specific topic and leave thereby losing the viewership.If the institution knew about this problem they might be able to segregate into smaller videos and make it more interesting to attract other students.
 
 In this question we need to understand whether there is any relation between the views and the step position. This is the business understanding step in the CRISP-DM methodology.
 The first step before beginning with our analysis, the data needs to be cleaned and the columns must be structured.
@@ -124,6 +128,10 @@ knitr::include_graphics(here::here("graphs", "plot_j3.png"))
 
 Q2) Cycle 1 How many people who watched the videos have completely watched the videos till the end?
 
+Reason for asking question-
+
+To understand the number of peoples engagemnet of the students? 
+
 In this question we will be merging the data from the video_stats4 and video_stats5 i.e from November 2017 to February 2018. After combining the data files the correlation function is applied between columns total view and viewed onehundred percent to find the relation between them.
 From the calculated value the result obtained is 0.03268353. For plotting the graph the ggplot() function is used. 
 
@@ -145,7 +153,9 @@ knitr::include_graphics(here::here("graphs", "plot_j4.png"))
 ```
 
 
+Reason for asking question-
 
+After understanding the engagement of the students, it is time to understand why the students have left the videos and what can be doen to avoid this problem. This will not only help in attracting newer students and might help reduce loads on the existing resources and can be tailored according to the comfortablity of the students.
 
 
 Cycle 2 What is the least and most common reason to leave the course?
@@ -182,7 +192,11 @@ It can be understood from the graph that the pie chart shows that the majority o
 
 Q3) Does the duration of the video effect the total viewership? 
 
-In this question we will be considering the column of the total views and duration of the video. In this case we will be considering the data for September 2017 November 2017 and februaury 2018. This will help us in performing the analysis and give us some insights of the relation. We will be using the correlation function to find out the relation between them. After performing the correlation function the calculated result  for video_stats3 is -0.0532359.
+Reason for asking question-
+
+This will in a way help in understanding the interest of the students and the videos can be shortened or students can be given breaks in between. Maybe for certain lectures can be lengthier to cover much more course and reduce the over course duration of the subject.  
+
+In this question we will be considering the column of the total views and duration of the video. In this case we will be considering the data for September 2017 November 2017 and February 2018. This will help us in performing the analysis and give us some insights of the relation. We will be using the correlation function to find out the relation between them. After performing the correlation function the calculated result  for video_stats3 is -0.0532359.
 
 The same procedure is repeated on the video_stats4 is -0.09594468. and the result for video_stats5 is -0.07226244. It can be said that the relation is inversely proportional to each other. 
 After performing the correlation function a graph is plotted using the ggplot() function for the above mentioned data. As per the plot it can be seen that as video duration increase the total viewers dip in number.
@@ -215,7 +229,11 @@ knitr::include_graphics(here::here("graphs", "plot_j8.png"))
 
 
 
-Q4) Exploring other data such as step position and total viewed HD to find out any relation between them
+Q4) Exploring other data such as step position and total viewed HD to find out any relation between them?
+
+Reason for asking question-
+
+This is because it can help the faculty to understand whether expensive cameras are recovered or can be shot on low end cameras. This might help in reducing the storage place for the videos and whther it is required to buy expensive shooting gear.
 
 In this question we will be considering the step position and total viewed HD for our analysis. In this case we will be considering the data for the months of September 2017 November 2017 and February 2018. In this to find out the relation between the step position and total viewed hd we will be applying the cor() function.
 
