@@ -21,13 +21,24 @@ In this project work the analysis is done on the statistical viewing of viewing 
 
 ## Analysis
 
-The above data analysis is done based on the CRISP-DM methodology. The following steps in this methodology are as follows 
+The above data analysis is done based on the CRISP-DM methodology. The following steps in this methodology are as follows   
+
 a)Business Understanding
+This is essential part of the project before proceeding ahead with the next step. This is because it is essential to understand what the business objective will be otherwise the half way through the project the goal will not be achieved and economical resources as well as time will be wasted.
 b)Data Understanding 
-c)data preparation
-d)modelling
-e)evaluation
+•	In this step, there are 4 steps namely collect,Describe,explore, data quality. 
+•	The data collection is where we acquire the data.  Describe is where we check the data to see if there any errors in it, also check its structure.  Also to check if the data is satisfying our objective or not. 
+•	 In data  Exploring the data and submitting the initial findings of the data.   
+•	Data quality to check if there are any blank spaces in or not.
+c)Data preparation
+Now after acquiring the data and at this step it is the final step before doing modelling on it. In this we we clean the data and maybe construct new columns or rows in it to help in the modelling section. Also in this we integrate two or more datas.
+d)Modelling
+In this step after data preparation we apply various models on it and test various outcomes on it and later assess the models.
+e)Evaluation
+In this step we evaluate the results obtained. This is the summary of all the steps previously worked on
 f)development
+In this process decision is taken to be worked on or not. If agreed upon then it is executed otherwise it will go for another iteration.
+
 
 ```{r fig.align = 'center', out.width = "50%", fig.cap = "The CRISP-DM Model", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "CRISPDM.png"))
@@ -41,6 +52,7 @@ knitr::include_graphics(here::here("graphs", "CRISPDM.png"))
 
 # Example preprocessing script.
 library('ProjectTemplate')
+# setwd("~/sahej eda/EDA")
 load.project()
 options(repos="https://cran.rstudio.com")
 
@@ -53,6 +65,16 @@ In this question we need to understand whether there is any relation between the
 The first step before beginning with our analysis, the data needs to be cleaned and the columns must be structured.
 Now comparing the columns of total views effected by the Step position in video_stats_3 which is for the month of September 2017. In order to find the relation between the total views and step position, the correlation function is applied. The value calculated is -0.7168596. This states that they are inversely proportionate to each other. Later the graph is plotted via ggplot() function. As per the graph we can conclude that the viewers decreases as they proceed through the course.
 Comparing the columns in the video_stats4 as well as for video_stats5 by repeating the same procedure. The results observed by calculation for videos statistics 4 is -0.673233 and for video stats5 is -0.6636169 .  Using ggplot()for plotting the graph for video_stats 4 and video_stats 5, it can be inferred that the viewership starts to decrease as the course progresses towards the end.
+
+```{r include=TRUE}
+
+cortop9 <- cor(cyber.security.3_video.stats[,1],cyber.security.3_video.stats[,4])
+cortop9 
+cortop10 <- cor(cyber.security.4_video.stats[,1],cyber.security.4_video.stats[,4])
+cortop10
+cortop11 <- cor(cyber.security.5_video.stats[,1],cyber.security.5_video.stats[,4])
+cortop11 
+```
 
 ```{r fig.align = 'center', out.width = "100%", fig.cap = "Analysis of step position vs total views of the modules v3", echo = FALSE}
 knitr::include_graphics(here::here("graphs", "plot_j1.png"))
@@ -74,11 +96,15 @@ knitr::include_graphics(here::here("graphs", "plot_j3.png"))
 Q2) Cycle 1 How many people who watched the videos have completely watched the videos till the end?
 
 In this question we will be merging the data from the video_stats4 and video_stats5 i.e from November 2017 to February 2018. After combining the data files the correlation function is applied between columns total view and viewed onehundred percent to find the relation between them.
-From the calculated value the result obtained is 0.03268353. For plotting the graph the ggplot() function is used. As per the graph it can be stated that approximately 1850 has two values and the values above
+From the calculated value the result obtained is 0.03268353. For plotting the graph the ggplot() function is used. 
 
 From the correlation of the total views and onehundred percent it can be stated that:
 a) Whenever the total views increases not only the total learners watching 100 percent of video increases but also the percentage learners increases and vice versa.
 b) This shows that if any video has good content people viewing it increases at a healthy rate which is stated through positive numerical correlation observed here.
+
+```{r fig.align = 'center', out.width = "100%", fig.cap = "relation between total views and viewed onehundred percent v4 and v5", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j4.png"))
+```
 
 
 
@@ -93,6 +119,20 @@ d) The course was too easy
 e) The course was too difficult
 f) The course wasn’t what I expected
 g) The course won’t help me reach my goal
+
+
+```{r plot 8, fig.align = 'center', out.width = "100%", fig.cap = "leaving reason", echo = FALSE}
+knitr::include_graphics(here::here("graphs", "plot_j5.png"))
+```
+It can be understood from the graph that the pie chart shows that the majority of students chose "Other" as their reason for leaving the course (i.e. 30.09 percent). Thereby no conclusions can be drawn from this. Thereby selecting the next highest column that is they ‘ I don’t have enough time’  i.e 17.70%. The least  percentage of the pie is the ‘the course was too easy’ i.e 7.96%.
+
+
+Q3) Does the duration of the video effect the total viewership?
+In this question we will be considering the column of the total views and duration of the video. In this case we will be considering the data for September 2017 November 2017 and februaury 2018. This will help us in performing the analysis and give us some insights of the relation. We will be using the correlation function to find out the relation between them. After performing the correlation function the calculated result  for video_stats3 is -0.0532359. 
+The same procedure is repeated on the video_stats4 is -0.09594468. and the result for video_stats5 is -0.07226244. It can be said that the relation is inversely proportional to each other. 
+After performing the correlation function a graph is plotted using the ggplot() function for the above mentioned data. As per the plot it can be seen that as video duration increase the total viewers dip in number.
+
+
 
 
 
