@@ -84,7 +84,7 @@ options(repos="https://cran.rstudio.com")
 ```
 
 
-Q1)  Cycle 1- How are the total views effected by the Step position.
+Q1)  Cycle 1- How are the total views effected by the Step position?
  
 Reason for asking question-
 
@@ -279,4 +279,8 @@ Conclusion
 
 3.The last data that was explored between the step position and HD video has little to no connection from the graph. Thereby, it can be inferred that the content of the video matters and the clarity of the video.
 
-
+# References
+https://www.sv-europe.com/crisp-dm-methodology/
+https://www.nimblecoding.com/data-mining-process-crisp-dm/
+ Preidys, S.; Sakalauskas, L. 2010. Analysis of students’ study activities in virtual learning environments
+using data mining methods, Technological and Economic Development of Economy 16(1): 94–108.
